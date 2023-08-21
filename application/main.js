@@ -1,34 +1,17 @@
 "use strict";
-// ----------------------------------------------------------------
-const hiddenNemo = "fvgybuhnemofgbhnj";
-function findNemo(text) {
-  const index = text.indexOf("nemo");
-  if (index !== -1) {
-    return `Nemo found at index ${index}.`;
-  } else {
-    return "Nemo not found.";
+let size = +prompt("Enter the size of your chessboard");
+
+let chessboard = "";
+
+for (let y = 0; y < size; y++) {
+  for (let x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0) {
+      chessboard += " ";
+    } else {
+      chessboard += "#";
+    }
   }
+  chessboard += "\n";
 }
 
-console.log(findNemo(hiddenNemo));
-// ----------------------------------------------------------------
-const nemo = {
-  firstName: {
-    surname: {
-      text: {
-        msg: "nemo",
-      },
-    },
-  },
-};
-
-console.log(nemo.firstName.surname.text.msg);
-// ----------------------------------------------------------------
-
-const arr = ["not nemo", "not nemo", "nemo", "not nemo", "not nemo", "nemo"];
-
-for (let i = 0; i < arr.length; i++) {
-  const nemo = arr[i];
-  if (nemo === "nemo") console.log(nemo);
-}
-// ---------------------------------------------------------------
+console.log(chessboard);
